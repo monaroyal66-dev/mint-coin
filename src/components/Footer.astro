@@ -1,11 +1,58 @@
 ---
+const links = [
+  { label: 'コイン情報',     href: '/coin-info/' },
+  { label: 'シリーズ解説',   href: '/series/' },
+  { label: 'グレーディング', href: '/grading/' },
+  { label: 'コラム',         href: '/columns/' },
+  { label: '会社概要',       href: '/company/' },
+  { label: 'お問い合わせ',   href: '/contact/' },
+];
+
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-50 border-t border-gray-200 mt-auto">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <p class="text-sm text-gray-500 text-center">
-      &copy; {year} mint-coin. All rights reserved.
-    </p>
+<footer class="bg-navy-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div>
+        <p class="font-serif text-base tracking-[0.18em] font-semibold mb-3">MINT COIN</p>
+        <p class="text-sm text-navy-300 leading-relaxed">
+          アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング情報を誠実に発信します。
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <p class="text-xs font-medium tracking-widest text-gold-400 uppercase mb-4">Navigation</p>
+        <ul class="space-y-2">
+          {links.map(({ label, href }) => (
+            <li>
+              <a href={href} class="text-sm text-navy-300 hover:text-white transition-colors">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="text-xs font-medium tracking-widest text-gold-400 uppercase mb-4">Contact</p>
+        <a
+          href="mailto:info@mint-coin.jp"
+          class="text-sm text-navy-300 hover:text-white transition-colors"
+        >
+          info@mint-coin.jp
+        </a>
+        <p class="text-sm text-navy-400 mt-4">ミント合同会社</p>
+      </div>
+    </div>
+
+    <div class="border-t border-navy-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p class="text-xs text-navy-400">&copy; {year} ミント合同会社. All rights reserved.</p>
+      <p class="text-xs text-navy-600">MINT COIN</p>
+    </div>
   </div>
 </footer>

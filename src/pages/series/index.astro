@@ -1,0 +1,104 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const britishSeries = [
+  {
+    name: 'Sovereign（ソブリン）',
+    period: '1817年〜現在',
+    description: '英国王室が発行する 22 金の金貨。ヴィクトリア朝から現代まで続く最も歴史ある英国コインのひとつ。肖像の彫刻家やデザインによって年銘の価値が大きく異なります。',
+  },
+  {
+    name: 'Britannia（ブリタニア）',
+    period: '1987年〜現在',
+    description: '英国を象徴する女神ブリタニアをデザインした現代コイン。金・銀両方で発行されており、ブリオン（地金型）とコレクター向けプルーフの両ラインがあります。',
+  },
+  {
+    name: 'Una and the Lion（ウナ・アンド・ザ・ライオン）',
+    period: '1839年 / 2019年〜',
+    description: '1839年のオリジナルは世界で最も美しいコインのひとつとして名高い。2019年以降、Royal Mint が現代版を復刻。アンティーク・モダン両面から注目度の高いシリーズです。',
+  },
+  {
+    name: 'Three Graces（スリー・グレイセス）',
+    period: '1817年 / 2020年〜',
+    description: '三美神をモチーフにした希少なデザイン。オリジナルの 1817 年版は現存数が少なく高額で取引されます。Royal Mint の現代復刻版も高い人気があります。',
+  },
+];
+
+const usSeries = [
+  {
+    name: 'American Eagle（アメリカン・イーグル）',
+    period: '1986年〜現在',
+    description: '米国造幣局が発行する金・銀・白金・パラジウム各種ブリオンコイン。22金（金貨）と .999 銀（銀貨）で発行され、世界で最も流通量の多いブリオンコインのひとつです。',
+  },
+  {
+    name: 'Morgan Dollar（モーガン・ダラー）',
+    period: '1878〜1904年 / 1921年',
+    description: '彫刻家 George T. Morgan がデザインした大型銀貨。コレクター人気が高く、グレードや年銘によって価値が大きく変わります。特定の年銘（キーデート）は高額取引されます。',
+  },
+  {
+    name: 'Saint-Gaudens（セント・ゴーデンス）',
+    period: '1907〜1933年',
+    description: '彫刻家 Augustus Saint-Gaudens によるデザインの $20 金貨。アメリカコイン史上最も美しいと称され、世界的に高い評価を受けるアンティーク金貨です。',
+  },
+];
+---
+
+<PageLayout
+  title="シリーズ解説"
+  description="Royal Mint、ソブリン、ウナ・アンド・ザ・ライオンなど、世界の主要コインシリーズを解説します。"
+>
+  <!-- Page Hero -->
+  <section class="bg-ivory py-12 border-b border-parchment">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-xs text-gray-400 mb-4">
+        <a href="/" class="hover:text-navy-700 transition-colors">ホーム</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">シリーズ解説</span>
+      </nav>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-900">シリーズ解説</h1>
+      <p class="mt-3 text-gray-600 max-w-2xl leading-loose">
+        英国・米国を中心に、世界の主要コインシリーズをシリーズ別に解説します。
+      </p>
+    </div>
+  </section>
+
+  <!-- British Series -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <p class="text-xs font-medium tracking-widest text-gold-600 uppercase mb-2">Great Britain</p>
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-3">英国コイン</h2>
+        <div class="w-8 h-px bg-gold-500"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {britishSeries.map(({ name, period, description }) => (
+          <div class="p-8 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
+            <p class="text-xs text-gold-600 mb-2 tracking-wide">{period}</p>
+            <h3 class="font-serif text-lg font-semibold text-navy-800 mb-3">{name}</h3>
+            <p class="text-sm text-gray-600 leading-loose">{description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- US Series -->
+  <section class="bg-ivory py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <p class="text-xs font-medium tracking-widest text-gold-600 uppercase mb-2">United States</p>
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-3">米国コイン</h2>
+        <div class="w-8 h-px bg-gold-500"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {usSeries.map(({ name, period, description }) => (
+          <div class="bg-white p-7 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
+            <p class="text-xs text-gold-600 mb-2 tracking-wide">{period}</p>
+            <h3 class="font-serif text-base font-semibold text-navy-800 mb-3">{name}</h3>
+            <p class="text-sm text-gray-600 leading-loose">{description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

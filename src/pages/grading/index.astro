@@ -1,0 +1,134 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const grades = [
+  { range: 'MS 70',      label: 'パーフェクト',       desc: '肉眼で傷が確認できないほぼ完全な状態。製造時の完璧さが維持されている。' },
+  { range: 'MS 65–69',   label: 'ジェムアンサーキュレーテッド', desc: '光沢がありわずかな接触跡が認められる。コレクターに人気の高いグレード帯。' },
+  { range: 'MS 60–64',   label: 'アンサーキュレーテッド',    desc: '未流通だが製造過程や保管による傷・擦れが見られる。' },
+  { range: 'AU 50–58',   label: 'アバウトアンサーキュレーテッド', desc: '軽微な流通跡がある。高い部分に摩耗の兆候が確認できる。' },
+  { range: 'EF/XF 40–45', label: 'エクストラファイン',        desc: '高い部分に明瞭な摩耗があるが、全体的に細部が残っている。' },
+  { range: 'VF 20–35',   label: 'ベリーファイン',       desc: '中程度の摩耗。主要デザインは鮮明だが細部は平坦化している。' },
+];
+
+const companies = [
+  {
+    name: 'PCGS',
+    full: 'Professional Coin Grading Service',
+    since: '1986年設立',
+    description: '米国カリフォルニア州に本拠を置く世界最大の鑑定機関のひとつ。一貫したグレーディング基準と豊富なデータベースを持ち、世界市場での流通性が高いスラブです。',
+  },
+  {
+    name: 'NGC',
+    full: 'Numismatic Guaranty Corporation',
+    since: '1987年設立',
+    description: 'PCGS と並ぶ世界的鑑定機関。世界コインの取り扱いが広く、日本でも多くのコレクターや輸入業者が利用しています。Registry Sets（登録グレード競争）にも対応しています。',
+  },
+];
+---
+
+<PageLayout
+  title="グレーディング"
+  description="コインのグレーディング（状態評価）の仕組み、シェルドンスケール、PCGS・NGCの役割を解説します。"
+>
+  <!-- Page Hero -->
+  <section class="bg-ivory py-12 border-b border-parchment">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-xs text-gray-400 mb-4">
+        <a href="/" class="hover:text-navy-700 transition-colors">ホーム</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">グレーディング</span>
+      </nav>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-900">グレーディング</h1>
+      <p class="mt-3 text-gray-600 max-w-2xl leading-loose">
+        コインの状態評価（グレーディング）の仕組み、シェルドンスケール、主要鑑定機関 PCGS・NGC の役割を解説します。
+      </p>
+    </div>
+  </section>
+
+  <!-- Sheldon Scale -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-3">シェルドンスケール（1〜70点）</h2>
+        <div class="w-8 h-px bg-gold-500 mb-4"></div>
+        <p class="text-sm text-gray-600 max-w-2xl leading-loose">
+          コインの状態は 1868 年に Dr. William Sheldon が考案した 1〜70 点のスケールで評価されます。現在 PCGS・NGC が採用しており、世界標準となっています。
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {grades.map(({ range, label, desc }) => (
+          <div class="p-6 border border-parchment rounded">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="font-serif text-lg font-semibold text-navy-800">{range}</span>
+              <span class="text-xs text-gold-600">{label}</span>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Grade Types -->
+  <section class="bg-ivory py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-3">グレードの種類</h2>
+        <div class="w-8 h-px bg-gold-500"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            abbr: 'MS',
+            name: 'Mint State',
+            desc: '未流通の状態。60〜70 の範囲で評価されます。製造後に流通していない状態を指します。',
+          },
+          {
+            abbr: 'PR / PF',
+            name: 'Proof',
+            desc: '鏡面仕上げのプルーフコイン専用のグレード。背景の鏡面と図柄のフロストが特徴です。',
+          },
+          {
+            abbr: 'SP',
+            name: 'Specimen',
+            desc: '特別製造の展示・見本用コイン。プルーフとの中間的な仕上がりを持つコインに付与されます。',
+          },
+        ].map(({ abbr, name, desc }) => (
+          <div class="bg-white p-7 border border-parchment rounded">
+            <p class="font-serif text-2xl font-semibold text-navy-800 mb-1">{abbr}</p>
+            <p class="text-xs text-gold-600 mb-3">{name}</p>
+            <p class="text-sm text-gray-600 leading-loose">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Grading Companies -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-3">主要鑑定機関</h2>
+        <div class="w-8 h-px bg-gold-500"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {companies.map(({ name, full, since, description }) => (
+          <div class="p-8 border border-parchment rounded">
+            <div class="flex items-baseline gap-3 mb-1">
+              <h3 class="font-serif text-2xl font-semibold text-navy-800">{name}</h3>
+              <span class="text-xs text-gray-400">{since}</span>
+            </div>
+            <p class="text-xs text-gold-600 mb-4">{full}</p>
+            <p class="text-sm text-gray-600 leading-loose">{description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 p-6 bg-ivory border border-parchment rounded">
+        <h3 class="font-serif text-base font-semibold text-navy-800 mb-2">スラブコインとは</h3>
+        <p class="text-sm text-gray-600 leading-loose">
+          鑑定機関がコインをプラスチック製のホルダー（スラブ）に封入した状態のコインを指します。スラブには鑑定機関名・グレード・コインの基本情報がラベルとして表示されます。スラブコインは状態の保証と流通性の観点から、現代の収集・売買の標準形態となっています。
+        </p>
+      </div>
+    </div>
+  </section>
+</PageLayout>

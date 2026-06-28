@@ -5,17 +5,19 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
-  canonicalUrl?: string;
 }
 
 const {
   title,
-  description = 'mint-coin — アンティークコインの専門サイト',
+  description = 'MINT COINは、アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング、海外市場情報を整理して発信する情報サイトです。',
   ogImage = '/og-default.png',
-  canonicalUrl = Astro.url.href,
 } = Astro.props;
 
-const siteTitle = title === 'ホーム' ? 'mint-coin' : `${title} | mint-coin`;
+const canonicalUrl = Astro.url.href;
+const siteTitle = title === 'ホーム' ? 'MINT COIN' : `${title} | MINT COIN`;
+const ogImageUrl = Astro.site
+  ? new URL(ogImage, Astro.site).href
+  : `https://mint-coin.jp${ogImage}`;
 ---
 
 <!doctype html>
@@ -25,27 +27,33 @@ const siteTitle = title === 'ホーム' ? 'mint-coin' : `${title} | mint-coin`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- SEO -->
     <title>{siteTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Open Graph -->
+    <!-- OGP -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:site_name" content="mint-coin" />
+    <meta property="og:site_name" content="MINT COIN" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
   </head>

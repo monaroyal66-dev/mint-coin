@@ -1,0 +1,78 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const columns = [
+  {
+    title: 'eBayでアンティークコインを安全に購入するには',
+    category: '購入ガイド',
+    summary: 'eBay を利用したアンティークコインの購入における注意点を解説します。出品者評価の見方、スラブ vs. raw コインの違い、決済・輸入時のポイントを整理します。',
+  },
+  {
+    title: 'グレーディングコインの保管と管理',
+    category: '保管・管理',
+    summary: 'スラブ封入済みコインの適切な保管方法、湿度・温度管理、長期保存のポイントを解説します。コレクションの価値を長く守るための基礎知識です。',
+  },
+  {
+    title: 'Royal Mintとは何か——イギリス王立造幣局の歴史',
+    category: 'シリーズ背景',
+    summary: '1000 年以上の歴史を持つ英国の造幣局、Royal Mint（王立造幣局）の成り立ちと、現代コレクターコインの発行体制について解説します。',
+  },
+  {
+    title: 'NGC・PCGSへのコイン提出——概要と流れ',
+    category: 'グレーディング',
+    summary: '自分のコインを NGC や PCGS に提出してグレーディングを受ける際の基本的な流れを説明します。提出先の選択から返却までのプロセスを整理します。',
+  },
+  {
+    title: 'アンティークコインの相場はどこで調べるか',
+    category: '市場情報',
+    summary: 'PCGS Price Guide、NGC Price Guide、eBay の落札履歴など、アンティークコインの相場調査に使えるリソースを紹介します。相場情報の読み方も解説します。',
+  },
+];
+---
+
+<PageLayout
+  title="コラム"
+  description="eBay・海外市場の動向、購入時のポイント、コインにまつわる読み物を掲載するコラムページです。"
+>
+  <!-- Page Hero -->
+  <section class="bg-ivory py-12 border-b border-parchment">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-xs text-gray-400 mb-4">
+        <a href="/" class="hover:text-navy-700 transition-colors">ホーム</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">コラム</span>
+      </nav>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-900">コラム</h1>
+      <p class="mt-3 text-gray-600 max-w-2xl leading-loose">
+        eBay・海外市場の動向、購入時のポイント、コインにまつわる読み物を掲載します。
+      </p>
+    </div>
+  </section>
+
+  <!-- Column List -->
+  <section class="bg-white py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="divide-y divide-parchment">
+        {columns.map(({ title, category, summary }) => (
+          <article class="py-8 first:pt-0 last:pb-0">
+            <p class="text-xs font-medium text-gold-600 tracking-wide mb-2">{category}</p>
+            <h2 class="font-serif text-xl font-semibold text-navy-900 mb-3 leading-snug">
+              {title}
+            </h2>
+            <p class="text-sm text-gray-600 leading-loose">{summary}</p>
+            <p class="text-xs text-navy-400 mt-4 italic">（準備中）</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Note -->
+  <section class="bg-ivory py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-sm text-gray-500 leading-loose">
+        ※ 現在コンテンツを準備中です。随時追加してまいります。
+      </p>
+    </div>
+  </section>
+</PageLayout>

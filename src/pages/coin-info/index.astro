@@ -1,0 +1,91 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const sections = [
+  {
+    title: 'コインの種類と素材',
+    body: 'アンティークコインには金貨・銀貨・銅貨があり、それぞれ品位（ファインネス）が異なります。金貨では .9999 の純金や .9167 の22金が代表的です。素材の違いは保存状態や市場価値にも影響するため、基本的な知識として押さえておくことが重要です。',
+  },
+  {
+    title: '発行枚数と希少性',
+    body: 'コインの価値は発行枚数（ミンテージ）に大きく左右されます。Royal Mint が発行するプルーフコインは一般流通品より枚数が少なく、特定の年銘・デザインは希少性が高くなる傾向があります。発行枚数は NGC・PCGS の証明書や造幣局公式資料で確認できます。',
+  },
+  {
+    title: 'アンティークコインとモダンコイン',
+    body: 'アンティークコインは概ね 100 年以上前に発行されたコインを指します。状態の個体差が大きく、鑑定・グレーディングによって価値が大きく変わります。モダンコインは現代の造幣局が発行する収集目的のコインで、製造品質が高い一方、プレミアムは発行枚数と希少性で決まります。',
+  },
+  {
+    title: 'プルーフコインと通常品の違い',
+    body: 'プルーフ（Proof）コインは鏡面仕上げのダイを用いて製造された高品質コインです。背景部分の鏡面と図柄の細かいフロスト加工が特徴で、コレクション用途に発行されます。通常の流通品（ブリリアントアンサーキュレーテッド / MS グレード）とは製造工程が異なります。',
+  },
+];
+---
+
+<PageLayout
+  title="コイン情報"
+  description="アンティークコイン・モダンコインに関する基礎知識、素材、発行枚数、市場情報を解説します。"
+>
+  <!-- Page Hero -->
+  <section class="bg-ivory py-12 border-b border-parchment">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-xs text-gray-400 mb-4">
+        <a href="/" class="hover:text-navy-700 transition-colors">ホーム</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">コイン情報</span>
+      </nav>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-900">コイン情報</h1>
+      <p class="mt-3 text-gray-600 max-w-2xl leading-loose">
+        アンティークコイン・モダンコインに関する基礎知識、素材、発行枚数、海外市場情報を体系的に解説します。
+      </p>
+    </div>
+  </section>
+
+  <!-- Basic Knowledge -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-3">コインの基礎知識</h2>
+        <div class="w-8 h-px bg-gold-500"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {sections.map(({ title, body }) => (
+          <div class="p-8 border border-parchment rounded">
+            <h3 class="font-serif text-lg font-semibold text-navy-800 mb-3">{title}</h3>
+            <p class="text-sm text-gray-600 leading-loose">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Info -->
+  <section class="bg-ivory py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-3">海外市場情報</h2>
+        <div class="w-8 h-px bg-gold-500"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            title: 'eBay・海外オークション',
+            body: 'eBay はアンティークコインの一次流通市場として機能しています。出品者の評価、グレーディング会社の封入済み（スラブ）かどうか、送料・輸入条件を確認した上で入札することが重要です。',
+          },
+          {
+            title: 'グレーディングコインの流通',
+            body: 'PCGS・NGC でグレーディングされた封入済みコインは、状態が第三者によって保証されているため、売買における透明性が高まります。スラブコインは世界市場で標準的な取引形態です。',
+          },
+          {
+            title: '価格帯の見方',
+            body: '同一コインでもグレードによって価格は数倍から数十倍異なります。PCGS Price Guide や NGC の価格リストを参考に、相場観を養うことが第一歩です。',
+          },
+        ].map(({ title, body }) => (
+          <div class="bg-white p-6 rounded border border-parchment">
+            <h3 class="font-serif text-base font-semibold text-navy-800 mb-2">{title}</h3>
+            <p class="text-sm text-gray-600 leading-loose">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

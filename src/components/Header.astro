@@ -1,31 +1,94 @@
 ---
 const navItems = [
-  { label: 'ホーム', href: '/' },
-  { label: 'コレクション', href: '/collection' },
-  { label: 'について', href: '/about' },
+  { label: 'ホーム',         href: '/' },
+  { label: 'コイン情報',     href: '/coin-info/' },
+  { label: 'シリーズ解説',   href: '/series/' },
+  { label: 'グレーディング', href: '/grading/' },
+  { label: 'コラム',         href: '/columns/' },
+  { label: '会社概要',       href: '/company/' },
+  { label: 'お問い合わせ',   href: '/contact/' },
 ];
+
+const pathname = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(href);
+}
 ---
 
-<header class="bg-white border-b border-gray-200">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="h-0.5 bg-gold-500"></div>
+<header class="bg-white border-b border-parchment sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="/" class="text-xl font-bold text-gray-900 tracking-tight">
-        mint-coin
+
+      <!-- Logo -->
+      <a href="/" class="shrink-0 flex items-center gap-2.5">
+        <span class="font-serif text-lg font-semibold tracking-[0.18em] text-navy-900">
+          MINT COIN
+        </span>
       </a>
-      <nav>
-        <ul class="flex gap-6">
-          {navItems.map(({ label, href }) => (
-            <li>
-              <a
-                href={href}
-                class="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+
+      <!-- Desktop nav -->
+      <nav aria-label="グローバルナビゲーション" class="hidden lg:flex items-center gap-6">
+        {navItems.map(({ label, href }) => (
+          <a
+            href={href}
+            aria-current={isActive(href) ? 'page' : undefined}
+            class:list={[
+              'text-sm tracking-wide transition-colors duration-150',
+              isActive(href)
+                ? 'text-navy-900 font-medium border-b border-gold-500 pb-0.5'
+                : 'text-gray-500 hover:text-navy-800',
+            ]}
+          >
+            {label}
+          </a>
+        ))}
       </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        id="nav-toggle"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+        class="lg:hidden p-2 rounded text-navy-800 hover:bg-navy-50 transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
     </div>
   </div>
+
+  <!-- Mobile nav -->
+  <div id="nav-menu" class="hidden lg:hidden border-t border-parchment bg-white" aria-hidden="true">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex flex-col">
+      {navItems.map(({ label, href }) => (
+        <a
+          href={href}
+          class:list={[
+            'text-sm py-2.5 px-3 rounded transition-colors',
+            isActive(href)
+              ? 'text-navy-900 bg-navy-50 font-medium'
+              : 'text-gray-600 hover:text-navy-800 hover:bg-gray-50',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu   = document.getElementById('nav-menu');
+
+  toggle?.addEventListener('click', () => {
+    const opening = menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(opening));
+    menu?.setAttribute('aria-hidden',    String(!opening));
+  });
+</script>
