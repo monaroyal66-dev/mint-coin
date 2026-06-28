@@ -47,6 +47,63 @@ docs: update 01_SITE_ARCHITECTURE.md with Phase 2 URL plan
 
 ---
 
+## GitHub Push 前チェックリスト
+
+push する前に以下を全て確認する。1項目でも NG なら push しない。
+
+### 1. .gitignore の確認
+
+- [ ] `node_modules/` が追跡されていない（`git ls-files node_modules` が空）
+- [ ] `dist/` が追跡されていない
+- [ ] `.astro/` が追跡されていない
+- [ ] `.vscode/` が追跡されていない
+- [ ] `.wrangler/` が追跡されていない
+- [ ] `.env*` が追跡されていない
+- [ ] `git status` が `nothing to commit, working tree clean`
+
+### 2. ビルド確認
+
+- [ ] `npm run build` がエラーゼロで完了する
+- [ ] `npx astro check` で TypeScript エラーがない
+- [ ] ビルド後の `dist/` に全ページの HTML が生成されている
+
+### 3. README.md の内容
+
+- [ ] プロジェクト名・概要が記載されている
+- [ ] 起動方法（`npm install` / `npm run dev`）が記載されている
+- [ ] ビルド・デプロイ方法が記載されている
+- [ ] 技術スタックが記載されている
+
+### 4. docs が揃っていること
+
+- [ ] `docs/00_PROJECT_VISION.md` が存在し、空でない
+- [ ] `docs/01_SITE_ARCHITECTURE.md` が存在し、空でない
+- [ ] `docs/02_TECH_SPEC.md` が存在し、空でない
+- [ ] `docs/03_UI_DESIGN.md` が存在し、空でない
+- [ ] `docs/04_CONTENT_GUIDE.md` が存在し、空でない
+- [ ] `docs/05_DATABASE_MAPPING.md` が存在し、空でない
+- [ ] `docs/06_DEVELOPMENT_RULES.md` が存在し、空でない
+- [ ] `docs/07_ROADMAP.md` が存在し、空でない
+
+### 5. ライセンスの有無
+
+- [ ] `LICENSE` ファイルが存在する（またはリポジトリを Private にすることを確認済み）
+- [ ] `package.json` の `"license"` フィールドを確認した
+
+> **現状メモ**: リポジトリが Private であれば LICENSE は必須ではない。
+> Public にする場合は MIT または All Rights Reserved を明記すること。
+
+### 6. Cloudflare Pages の設定確認
+
+- [ ] Cloudflare Pages プロジェクトが作成済み
+- [ ] ビルドコマンド: `npm run build`
+- [ ] 出力ディレクトリ: `dist`
+- [ ] Node.js バージョン: `22`（Environment Variables で `NODE_VERSION=22` を設定）
+- [ ] カスタムドメイン `mint-coin.jp` の DNS 設定が完了している（または設定予定を確認）
+- [ ] main ブランチへの push で自動デプロイが動くことを確認
+
+---
+
 ## ファイル命名規則
 
 ### ページ（`src/pages/`）
