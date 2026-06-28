@@ -1,14 +1,6 @@
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"compatibility_date": "2026-06-28",
-	"compatibility_flags": ["global_fetch_strictly_public"],
-	"name": "mint-coin",
-	"main": "@astrojs/cloudflare/entrypoints/server",
-	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS"
-	},
-	"observability": {
-		"enabled": true
-	}
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "mint-coin",
+  "compatibility_date": "2026-06-28",
+  "pages_build_output_dir": "./dist"
 }
