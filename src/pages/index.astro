@@ -59,82 +59,40 @@ const themes = [
 >
   <!-- Hero -->
   <section class="relative bg-ivory py-24 sm:py-32 overflow-hidden">
-    <!-- Decorative coin illustrations -->
+    <!-- Decorative coin photos — place JPG files in /public/coins/ -->
     <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-      <!-- Crown coin — top-left -->
-      <svg style="position:absolute;left:-40px;top:-35px;width:240px;height:240px;opacity:0.085" viewBox="0 0 200 200" fill="none" stroke="#152A52" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="97" stroke-width="4"/>
-        <circle cx="100" cy="100" r="84" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="65" stroke-width="1"/>
-        <path d="M72 124 L72 93 L86 107 L100 73 L114 107 L128 93 L128 124 Z" stroke-width="2" stroke-linejoin="round"/>
-        <path d="M68 124 h64" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="100" cy="77" r="4" stroke-width="1.5"/>
-        <circle cx="84" cy="105" r="3" stroke-width="1.5"/>
-        <circle cx="116" cy="105" r="3" stroke-width="1.5"/>
-      </svg>
-      <!-- Star coin — top-right -->
-      <svg style="position:absolute;right:-15px;top:5px;width:190px;height:190px;opacity:0.075" viewBox="0 0 200 200" fill="none" stroke="#152A52" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="97" stroke-width="4"/>
-        <circle cx="100" cy="100" r="84" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="65" stroke-width="1"/>
-        <path d="M100 60 L107 88 L136 80 L117 102 L134 126 L106 116 L100 144 L94 116 L66 126 L83 102 L64 80 L93 88 Z" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="100" cy="100" r="10" stroke-width="1.5"/>
-      </svg>
-      <!-- Cross coin — bottom-left -->
-      <svg style="position:absolute;left:2%;bottom:-25px;width:175px;height:175px;opacity:0.075" viewBox="0 0 200 200" fill="none" stroke="#152A52" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="97" stroke-width="4"/>
-        <circle cx="100" cy="100" r="84" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="65" stroke-width="1"/>
-        <path d="M70 88 L88 88 L88 70 L112 70 L112 88 L130 88 L130 112 L112 112 L112 130 L88 130 L88 112 L70 112 Z" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="100" cy="100" r="8" stroke-width="1.5"/>
-      </svg>
-      <!-- Shield coin — bottom-right -->
-      <svg style="position:absolute;right:-20px;bottom:-22px;width:215px;height:215px;opacity:0.085" viewBox="0 0 200 200" fill="none" stroke="#152A52" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="97" stroke-width="4"/>
-        <circle cx="100" cy="100" r="84" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="65" stroke-width="1"/>
-        <path d="M72 70 L128 70 L128 105 Q128 133 100 143 Q72 133 72 105 Z" stroke-width="1.5" stroke-linejoin="round"/>
-        <path d="M83 78 L117 78 L117 105 Q117 124 100 133 Q83 124 83 105 Z" stroke-width="1"/>
-        <path d="M100 78 L100 133" stroke-width="1" stroke-dasharray="3 4"/>
-      </svg>
-      <!-- Concentric coin — top-center -->
-      <svg style="position:absolute;left:42%;top:-22px;width:108px;height:108px;opacity:0.065" viewBox="0 0 200 200" fill="none" stroke="#152A52" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="97" stroke-width="4"/>
-        <circle cx="100" cy="100" r="84" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="62" stroke-width="1"/>
-        <circle cx="100" cy="100" r="42" stroke-width="1"/>
-        <circle cx="100" cy="100" r="20" stroke-width="1.5"/>
-      </svg>
-      <!-- Fleur-de-lis coin — bottom center-right -->
-      <svg style="position:absolute;right:23%;bottom:10px;width:98px;height:98px;opacity:0.065" viewBox="0 0 200 200" fill="none" stroke="#152A52" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="97" stroke-width="4"/>
-        <circle cx="100" cy="100" r="84" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="65" stroke-width="1"/>
-        <path d="M100 65 Q115 74 115 90 Q115 106 100 108 Q85 106 85 90 Q85 74 100 65 Z" stroke-width="1.5"/>
-        <path d="M85 93 Q72 87 70 95 Q72 105 85 100" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M115 93 Q128 87 130 95 Q128 105 115 100" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M94 108 L94 134 Q94 140 100 140 Q106 140 106 134 L106 108" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <!-- Wreath coin — center-left -->
-      <svg style="position:absolute;left:17%;top:50%;transform:translateY(-50%);width:82px;height:82px;opacity:0.06" viewBox="0 0 200 200" fill="none" stroke="#152A52" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="97" stroke-width="4"/>
-        <circle cx="100" cy="100" r="84" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="65" stroke-width="1"/>
-        <path d="M75 100 Q78 72 100 65 Q122 72 125 100 Q122 128 100 135 Q78 128 75 100 Z" stroke-width="1"/>
-        <circle cx="100" cy="100" r="18" stroke-width="1.5"/>
-        <path d="M100 82 L100 118 M82 100 L118 100" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <!-- Lion/heraldic coin — center-right -->
-      <svg style="position:absolute;right:17%;top:45%;transform:translateY(-50%);width:78px;height:78px;opacity:0.06" viewBox="0 0 200 200" fill="none" stroke="#152A52" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="97" stroke-width="4"/>
-        <circle cx="100" cy="100" r="84" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="65" stroke-width="1"/>
-        <path d="M82 80 Q100 68 118 80 Q130 95 118 112 Q100 122 82 112 Q70 95 82 80 Z" stroke-width="1.5"/>
-        <path d="M88 90 Q100 84 112 90" stroke-width="1" stroke-linecap="round"/>
-        <circle cx="91" cy="96" r="4" stroke-width="1.5"/>
-        <circle cx="109" cy="96" r="4" stroke-width="1.5"/>
-        <path d="M95 108 Q100 113 105 108" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+      <!-- Una and the Lion — top-left, large -->
+      <div style="position:absolute;left:-30px;top:-25px;width:220px;height:220px;border-radius:50%;overflow:hidden;opacity:0.18">
+        <img src="/coins/una-lion.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.1) brightness(0.88)" />
+      </div>
+      <!-- Saint-Gaudens Double Eagle — top-right -->
+      <div style="position:absolute;right:-18px;top:8px;width:188px;height:188px;border-radius:50%;overflow:hidden;opacity:0.17">
+        <img src="/coins/st-gaudens.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.1) brightness(0.88)" />
+      </div>
+      <!-- Gothic Crown — bottom-left -->
+      <div style="position:absolute;left:2%;bottom:-22px;width:172px;height:172px;border-radius:50%;overflow:hidden;opacity:0.17">
+        <img src="/coins/gothic-crown.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.1) brightness(0.88)" />
+      </div>
+      <!-- Sovereign (Victoria) — bottom-right, large -->
+      <div style="position:absolute;right:-18px;bottom:-18px;width:208px;height:208px;border-radius:50%;overflow:hidden;opacity:0.18">
+        <img src="/coins/sovereign.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.1) brightness(0.88)" />
+      </div>
+      <!-- Three Graces — top-center -->
+      <div style="position:absolute;left:42%;top:-18px;width:108px;height:108px;border-radius:50%;overflow:hidden;opacity:0.14">
+        <img src="/coins/three-graces.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.1) brightness(0.88)" />
+      </div>
+      <!-- Britannia — bottom center-right -->
+      <div style="position:absolute;right:22%;bottom:12px;width:96px;height:96px;border-radius:50%;overflow:hidden;opacity:0.13">
+        <img src="/coins/britannia.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.1) brightness(0.88)" />
+      </div>
+      <!-- Morgan Dollar — center-left -->
+      <div style="position:absolute;left:17%;top:50%;transform:translateY(-50%);width:82px;height:82px;border-radius:50%;overflow:hidden;opacity:0.12">
+        <img src="/coins/morgan-dollar.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.1) brightness(0.88)" />
+      </div>
+      <!-- Maria Theresa Thaler — center-right -->
+      <div style="position:absolute;right:17%;top:45%;transform:translateY(-50%);width:78px;height:78px;border-radius:50%;overflow:hidden;opacity:0.12">
+        <img src="/coins/thaler.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.1) brightness(0.88)" />
+      </div>
     </div>
 
     <!-- Content -->
