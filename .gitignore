@@ -27,8 +27,5 @@ pnpm-debug.log*
 # wrangler local state
 .wrangler/
 
-# wrangler config (not needed for Cloudflare Pages GitHub integration)
-wrangler.jsonc
-wrangler.toml
 
 .vscode/
