@@ -1,0 +1,31 @@
+---
+const navItems = [
+  { label: 'ホーム', href: '/' },
+  { label: 'コレクション', href: '/collection' },
+  { label: 'について', href: '/about' },
+];
+---
+
+<header class="bg-white border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="text-xl font-bold text-gray-900 tracking-tight">
+        mint-coin
+      </a>
+      <nav>
+        <ul class="flex gap-6">
+          {navItems.map(({ label, href }) => (
+            <li>
+              <a
+                href={href}
+                class="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
