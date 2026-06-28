@@ -1,42 +1,37 @@
+# AGENTS.md — MINT COIN プロジェクト指示書（Codex / その他 AI 向け）
+
 ## Development
 
-When starting the dev server, use background mode:
+開発サーバーはバックグラウンドで起動する:
 
+```sh
+npm run dev
 ```
-astro dev --background
+
+ビルド確認（作業完了前に必ず実行）:
+
+```sh
+npm run build
 ```
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+## MINT COIN AI Instructions
 
-## Documentation
+作業前に `docs/` の仕様書を読むこと。優先順位:
 
-Full documentation: https://docs.astro.build
+1. `docs/00_PROJECT_VISION.md` — プロジェクト目的・理念・ビジョン
+2. `docs/01_SITE_ARCHITECTURE.md` — サイト設計・URL設計・DB連携方針
+3. `docs/02_TECH_SPEC.md` — 技術スタック・環境・ディレクトリ構成
+4. `docs/03_UI_DESIGN.md` — デザインシステム・カラー・タイポグラフィ
+5. `docs/04_CONTENT_GUIDE.md` — コンテンツ方針・SEO・記事の書き方
+6. `docs/05_DATABASE_MAPPING.md` — コインDB構造・APIとの対応
+7. `docs/06_DEVELOPMENT_RULES.md` — 開発ルール・Git・命名規則
+8. `docs/07_ROADMAP.md` — フェーズ計画・将来機能
 
-Consult these guides before working on related tasks:
+## Rules
 
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
-
-
-# MINT COIN AI Instructions
-
-Before making changes, read the project documents in `docs/`.
-
-Priority order:
-1. `docs/00_PROJECT_SPEC.md`
-2. `docs/01_ARCHITECTURE.md`
-3. `docs/02_UI_GUIDELINES.md`
-4. `docs/03_SEO_GUIDELINES.md`
-5. `docs/04_CONTENT_GUIDELINES.md`
-6. `docs/05_ROADMAP.md`
-
-Rules:
-- Do not change the site concept without approval.
-- Do not change the design system without approval.
-- Keep the site static-first for Cloudflare Pages.
-- Run `npm run build` before considering work complete.
-- Do not push to GitHub unless explicitly instructed.
+- サイトのコンセプト・理念は承認なしに変更しない
+- デザインシステム（カラー・フォント・余白）は承認なしに変更しない
+- 静的サイト（Cloudflare Pages）を前提とし、SSR は原則使わない
+- `npm run build` がエラーゼロであることを確認してから完了とする
+- GitHub への push はオーナーから明示的に指示があるまで行わない
+- 仕様書 → 実装 の順で進める。仕様にないことは勝手に実装しない
