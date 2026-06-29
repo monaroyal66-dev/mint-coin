@@ -1,6 +1,72 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 
+const featuredSeries = [
+  {
+    name: 'Una and the Lion',
+    nameJa: 'ウナ・アンド・ザ・ライオン',
+    period: '1839年 / 2019年〜',
+    href: '/series/',
+    description: '世界で最も美しいコインのひとつ。ヴィクトリア女王即位を記念した1839年版は伝説的な存在で、Royal Mintが復刻した現代版も世界中のコレクターから高い支持を受けます。',
+  },
+  {
+    name: 'Three Graces',
+    nameJa: 'スリー・グレイセス',
+    period: '1817年 / 2020年〜',
+    href: '/series/',
+    description: '三美神をモチーフにした希少な英国コイン。1817年版は現存数が少なく高額で取引されます。Royal Mintの現代復刻版も人気のシリーズのひとつです。',
+  },
+  {
+    name: 'Gothic Crown',
+    nameJa: 'ゴシック・クラウン',
+    period: '1847年 / 2019年〜',
+    href: '/series/',
+    description: 'ヴィクトリア朝の精緻なゴシック様式デザインで知られる英国クラウン銀貨。1847年版はアンティーク市場で高く評価され、Royal Mintによる現代復刻版も展開されています。',
+  },
+  {
+    name: "Queen's Beasts",
+    nameJa: 'クイーンズ・ビースト',
+    period: '2016〜2021年',
+    href: '/series/',
+    description: 'エリザベス2世女王の戴冠式に並んだ10頭の紋章獣をデザインしたシリーズ。金・銀・白金で全10種が展開され、コレクターから根強い人気を誇ります。',
+  },
+  {
+    name: 'Tudor Beasts',
+    nameJa: 'チューダー・ビースト',
+    period: '2022年〜',
+    href: '/series/',
+    description: "チャールズ3世国王の即位を機に始まった新シリーズ。チューダー王朝の紋章獣10頭を題材に、Queen's Beastsの後継として展開中です。",
+  },
+  {
+    name: 'Sovereign',
+    nameJa: 'ソブリン',
+    period: '1817年〜現在',
+    href: '/series/',
+    description: '英国王室が発行する22金（.9167）の金貨。ヴィクトリア朝から現代まで続く最も歴史ある英国金貨のひとつ。世界で最も広く流通するコインのひとつです。',
+  },
+];
+
+const latestColumns = [
+  {
+    category: '購入ガイド',
+    title: 'eBayでアンティークコインを安全に購入するには',
+    summary: 'eBay を利用したアンティークコイン購入の注意点を解説。出品者評価の見方、スラブ vs. rawコインの違い、決済・輸入時のポイントを整理します。',
+    href: '/columns/',
+  },
+  {
+    category: 'シリーズ背景',
+    title: 'Royal Mintとは何か——イギリス王立造幣局の歴史',
+    summary: '1000年以上の歴史を持つ英国の造幣局、Royal Mintの成り立ちと、現代コレクターコインの発行体制について解説します。',
+    href: '/columns/',
+  },
+  {
+    category: '市場情報',
+    title: 'アンティークコインの相場はどこで調べるか',
+    summary: 'PCGS Price Guide、NGC Price Guide、eBay落札履歴など、アンティークコインの相場調査に使えるリソースを紹介します。',
+    href: '/columns/',
+  },
+];
+
 const categories = [
   {
     title: 'コイン情報',
@@ -41,15 +107,6 @@ const categories = [
       <path d="M9.5 27H27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     </svg>`,
   },
-];
-
-const themes = [
-  { label: 'Royal Mint',       href: '/series/' },
-  { label: 'Una and the Lion', href: '/series/' },
-  { label: 'Three Graces',     href: '/series/' },
-  { label: 'Sovereign',        href: '/series/' },
-  { label: 'NGC / PCGS',       href: '/grading/' },
-  { label: 'eBay・海外市場',   href: '/columns/' },
 ];
 ---
 
@@ -121,11 +178,72 @@ const themes = [
     </div>
   </section>
 
+  <!-- Featured Series -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-4">人気シリーズ</h2>
+        <div class="w-10 h-px bg-gold-500 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredSeries.map(({ name, nameJa, period, href, description }) => (
+          <a
+            href={href}
+            class="group block p-8 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all"
+          >
+            <p class="text-xs text-gold-600 tracking-wide mb-2">{period}</p>
+            <h3 class="font-serif text-lg font-semibold text-navy-900 mb-1">{name}</h3>
+            <p class="text-xs text-gray-400 mb-4">{nameJa}</p>
+            <p class="text-sm text-gray-500 leading-relaxed">{description}</p>
+            <p class="text-xs text-gold-600 mt-5 group-hover:text-gold-500 transition-colors">
+              詳しく見る →
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Columns -->
+  <section class="bg-ivory py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-4">最新コラム</h2>
+        <div class="w-10 h-px bg-gold-500 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {latestColumns.map(({ category, title, summary, href }) => (
+          <a
+            href={href}
+            class="group block bg-white p-8 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all"
+          >
+            <p class="text-xs font-medium text-gold-600 tracking-wide mb-3">{category}</p>
+            <h3 class="font-serif text-base font-semibold text-navy-900 mb-3 leading-snug group-hover:text-navy-700 transition-colors">
+              {title}
+            </h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{summary}</p>
+            <p class="text-xs text-gold-600 mt-5 group-hover:text-gold-500 transition-colors">
+              続きを読む →
+            </p>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/columns/"
+          class="inline-flex items-center text-sm text-navy-700 hover:text-navy-900 transition-colors"
+        >
+          コラム一覧を見る →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Categories -->
   <section class="bg-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
-        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-4">主要カテゴリ</h2>
+        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-4">コインの基礎知識</h2>
         <div class="w-10 h-px bg-gold-500 mx-auto"></div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -146,22 +264,41 @@ const themes = [
     </div>
   </section>
 
-  <!-- Featured Themes -->
+  <!-- Grading Guide -->
   <section class="bg-ivory py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
-        <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-4">注目テーマ</h2>
-        <div class="w-10 h-px bg-gold-500 mx-auto"></div>
-      </div>
-      <div class="flex flex-wrap justify-center gap-3">
-        {themes.map(({ label, href }) => (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs font-medium tracking-widest text-gold-600 uppercase mb-4">Grading</p>
+          <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-4">グレーディングとは</h2>
+          <div class="w-8 h-px bg-gold-500 mb-6"></div>
+          <p class="text-sm text-gray-600 leading-loose mb-4">
+            コインの価値は「状態（グレード）」によって大きく変わります。世界標準の鑑定機関 PCGS・NGC が採用するシェルドンスケール（1〜70点）で状態を数値化し、透明性の高い売買を可能にします。
+          </p>
+          <p class="text-sm text-gray-600 leading-loose mb-8">
+            最高グレードの MS70・PR70 から流通品まで、グレードの読み方とその意味を解説します。
+          </p>
           <a
-            href={href}
-            class="inline-flex items-center px-5 py-2 border border-navy-200 text-sm text-navy-700 rounded-full hover:border-navy-600 hover:text-navy-900 hover:bg-white transition-all"
+            href="/grading/"
+            class="inline-flex items-center justify-center px-7 py-3 border border-navy-700 text-navy-800 text-sm font-medium tracking-wide rounded hover:bg-navy-50 transition-colors"
           >
-            {label}
+            グレーディングを学ぶ
           </a>
-        ))}
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { grade: 'MS 70', label: 'パーフェクト', desc: '肉眼で傷が確認できないほぼ完全な状態。' },
+            { grade: 'MS 65–69', label: 'ジェム', desc: '光沢がありわずかな接触跡が認められる。コレクターに人気の高いグレード帯。' },
+            { grade: 'PR / PF', label: 'プルーフ', desc: '鏡面仕上げのプルーフコイン専用グレード。背景の鏡面と図柄のフロストが特徴。' },
+            { grade: 'AU 50–58', label: 'アバウト UNC', desc: '軽微な流通跡があるが、高い水準の保存状態。' },
+          ].map(({ grade, label, desc }) => (
+            <div class="bg-white p-5 border border-parchment rounded">
+              <p class="font-serif text-lg font-semibold text-navy-800 mb-1">{grade}</p>
+              <p class="text-xs text-gold-600 mb-2">{label}</p>
+              <p class="text-xs text-gray-500 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -177,6 +314,23 @@ const themes = [
         MINT COINは、コインに関心を持つすべての方に向け、正確で公平な情報を発信することを使命としています。<br />
         投資煽りのない、誠実な情報提供を心がけています。
       </p>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="bg-ivory py-16">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-4">お問い合わせ</h2>
+      <div class="w-8 h-px bg-gold-500 mx-auto mb-6"></div>
+      <p class="text-sm text-gray-600 leading-loose mb-8">
+        コインに関するご質問、コンサルティング、NGC・PCGS 提出サポートについては、メールにてお気軽にご相談ください。
+      </p>
+      <a
+        href="/contact/"
+        class="inline-flex items-center justify-center px-8 py-3 bg-navy-800 text-white text-sm font-medium tracking-wide rounded hover:bg-navy-900 transition-colors"
+      >
+        お問い合わせはこちら
+      </a>
     </div>
   </section>
 </PageLayout>

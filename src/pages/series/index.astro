@@ -5,22 +5,37 @@ const britishSeries = [
   {
     name: 'Sovereign（ソブリン）',
     period: '1817年〜現在',
-    description: '英国王室が発行する 22 金の金貨。ヴィクトリア朝から現代まで続く最も歴史ある英国コインのひとつ。肖像の彫刻家やデザインによって年銘の価値が大きく異なります。',
+    description: '英国王室が発行する 22 金（.9167）の金貨。ヴィクトリア朝から現代まで続く最も歴史ある英国金貨のひとつ。肖像の彫刻家やデザインによって年銘の価値が大きく異なります。ジョージとドラゴンのデザインが象徴的で、世界で最も広く流通するコインのひとつです。',
   },
   {
     name: 'Britannia（ブリタニア）',
     period: '1987年〜現在',
-    description: '英国を象徴する女神ブリタニアをデザインした現代コイン。金・銀両方で発行されており、ブリオン（地金型）とコレクター向けプルーフの両ラインがあります。',
+    description: '英国を象徴する女神ブリタニアをデザインした現代コイン。金・銀両方で発行されており、ブリオン（地金型）とコレクター向けプルーフの両ラインがあります。毎年デザインが変わるプルーフ版はコレクターからの人気が高いシリーズです。',
   },
   {
     name: 'Una and the Lion（ウナ・アンド・ザ・ライオン）',
     period: '1839年 / 2019年〜',
-    description: '1839年のオリジナルは世界で最も美しいコインのひとつとして名高い。2019年以降、Royal Mint が現代版を復刻。アンティーク・モダン両面から注目度の高いシリーズです。',
+    description: '1839年のオリジナルは世界で最も美しいコインのひとつとして名高い。ウィリアム・ワイオンが彫刻した傑作で、若きヴィクトリア女王がライオンを従える姿を描きます。2019年以降、Royal Mint が現代版を復刻し、アンティーク・モダン両面から高い注目を集めるシリーズです。',
   },
   {
     name: 'Three Graces（スリー・グレイセス）',
     period: '1817年 / 2020年〜',
-    description: '三美神をモチーフにした希少なデザイン。オリジナルの 1817 年版は現存数が少なく高額で取引されます。Royal Mint の現代復刻版も高い人気があります。',
+    description: '三美神（アグライア・タリア・エウフロシュネ）をモチーフにした希少なデザイン。ウィリアム・ワイオンによる1817年版は現存数が少なく高額で取引されます。Royal Mint の現代復刻版も高い人気があります。',
+  },
+  {
+    name: 'Gothic Crown（ゴシック・クラウン）',
+    period: '1847年 / 2019年〜',
+    description: 'ヴィクトリア朝の精緻なゴシック様式デザインで知られる英国クラウン銀貨。ウィリアム・ダイスが彫刻した1847年版はアンティーク市場で高く評価されるプレミアムコイン。戴冠式用の冠を模した繊細なデザインが特徴で、Royal Mint による現代復刻版も展開されています。',
+  },
+  {
+    name: "Queen's Beasts（クイーンズ・ビースト）",
+    period: '2016〜2021年',
+    description: 'エリザベス2世女王の1953年戴冠式に並んだ10頭の紋章獣をデザインしたシリーズ。ライオン・ユニコーン・ドラゴンなど全10種が金・銀・白金で展開され、2021年に完結。コレクターに根強い人気を誇る現代コインシリーズのひとつです。',
+  },
+  {
+    name: 'Tudor Beasts（チューダー・ビースト）',
+    period: '2022年〜',
+    description: "チャールズ3世国王の即位を機に始まった新シリーズ。チューダー王朝の紋章獣10頭を題材に、Queen's Beastsの後継として2022年より展開中。Yale of Beaufort（ボーフォートのヤール）を皮切りに、歴史的な紋章獣が順次登場します。",
   },
 ];
 
@@ -70,7 +85,7 @@ const usSeries = [
         <h2 class="font-serif text-2xl font-semibold text-navy-900 mb-3">英国コイン</h2>
         <div class="w-8 h-px bg-gold-500"></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {britishSeries.map(({ name, period, description }) => (
           <div class="p-8 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
             <p class="text-xs text-gold-600 mb-2 tracking-wide">{period}</p>
