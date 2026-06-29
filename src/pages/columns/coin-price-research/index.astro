@@ -1,0 +1,128 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="アンティークコインの相場はどこで調べるか | コラム"
+  description="PCGS Price Guide、NGC Price Guide、eBay落札履歴など、アンティークコインの相場調査に使えるリソースを紹介。相場情報の読み方も解説します。"
+>
+  <section class="bg-ivory py-12 border-b border-parchment">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-xs text-gray-400 mb-4">
+        <a href="/" class="hover:text-navy-700 transition-colors">ホーム</a>
+        <span class="mx-2">›</span>
+        <a href="/columns/" class="hover:text-navy-700 transition-colors">コラム</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">相場調査の方法</span>
+      </nav>
+      <p class="text-xs font-medium tracking-widest text-gold-600 uppercase mb-3">市場情報</p>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-900 leading-snug">
+        アンティークコインの相場は<br class="hidden sm:inline" />どこで調べるか
+      </h1>
+      <p class="mt-5 text-gray-600 leading-loose">
+        アンティークコインの価格は、同一コインでもグレードや年銘によって数倍〜数十倍の差が生じます。
+        購入・売却・査定を行う前に、複数のソースで相場観を養うことが重要です。
+        本記事では、主要な相場調査リソースとその使い方を解説します。
+      </p>
+    </div>
+  </section>
+
+  <article class="bg-white py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">PCGS Price Guide</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          PCGS（Professional Coin Grading Service）が提供する Price Guide は、グレード別の参考価格をシリーズ・年銘単位で掲載しています。米国コインを中心に豊富なデータを持ち、業界内で広く参照されています。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          閲覧は PCGS の公式サイト（pcgs.com）から無料で可能です。検索窓でコイン名や年銘を入力するとグレード別価格表が表示されます。
+        </p>
+        <div class="bg-ivory border border-parchment rounded p-5">
+          <p class="text-xs text-gold-600 font-medium mb-2">注意点</p>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            PCGS Price Guide の価格はあくまで参考値であり、実際の取引価格とは異なる場合があります。特に世界コイン（英国・欧州コイン）はデータが限られているケースがあります。
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">NGC Price Guide</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          NGC（Numismatic Guaranty Corporation）の Price Guide は、米国コインに加えて世界コインのデータも比較的充実しています。英国コイン（Sovereign・Britannia等）のグレード別価格を調べる際に有用です。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose">
+          NGC の公式サイト（ngccoin.com）から無料で閲覧可能です。また、NGC は認証済みコインのデータベース（Cert Verification）も提供しており、認証番号からコインの詳細情報を確認できます。
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">eBay 落札履歴（Sold Listings）</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          実際の取引価格を調べるには、eBay の落札履歴（Sold Listings）が最も有用なリソースのひとつです。実際に売買が成立した価格を確認できるため、現在の市場実勢価格に近い情報が得られます。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          eBay で検索後、左サイドバーの「Sold Items」にチェックを入れると、過去の落札済み商品と価格が表示されます。スラブコインの場合はグレードや鑑定機関名も絞り込み条件に含めてください。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose">
+          表示される金額は米ドル建てがほとんどです。為替レートを考慮した上で日本円換算を行ってください。なお、eBay での落札価格は送料・手数料を含まない場合があります。
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">国内相場（ヤフオク・国内業者）</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          日本国内での売却・購入を検討している場合は、ヤフオクの落札履歴も参考になります。ただし、国内市場はeBayと比べて流通量が少なく、人気シリーズが高値で取引される場合と、需要が薄くeBayより安値になる場合の両方があります。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose">
+          国内業者（コイン専門店）の販売価格も参考にはなりますが、小売価格は市場の実勢価格より高めに設定されているケースが多いため、複数の情報源と比較してください。
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">相場情報を読む際の注意点</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          コインの相場は金・銀地金価格の変動、発行枚数の少なさ（希少性）、コレクターの流行といった要因で変動します。単一のデータソースだけで判断するのではなく、複数の情報源を組み合わせて相場観を養うことが重要です。
+        </p>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>price guideの価格は実際の取引価格と異なる場合がある（参考値）</li>
+          <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>eBay落札価格は一時的な需給で変動する</li>
+          <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>グレードの違いが価格に大きく影響するため、同条件での比較が必要</li>
+          <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>過去の相場が将来の価格を保証するものではない</li>
+        </ul>
+      </section>
+
+      <section class="bg-ivory border border-parchment rounded p-8">
+        <h2 class="font-serif text-lg font-semibold text-navy-900 mb-5">まとめ</h2>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>PCGS / NGC Price Guide でグレード別の参考価格を確認する</span></li>
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>eBay の Sold Listings で実際の取引価格を調べる</span></li>
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>国内相場はヤフオク落札履歴を参考にする</span></li>
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>複数のソースを組み合わせて相場観を養う</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-lg font-semibold text-navy-900 mb-5">関連ページ</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="/grading/" class="block p-5 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
+            <p class="text-xs text-gold-600 mb-1">グレーディング</p>
+            <p class="text-sm font-medium text-navy-800">グレーディングを学ぶ</p>
+            <p class="text-xs text-gray-500 mt-1">相場に影響するグレードの仕組み</p>
+          </a>
+          <a href="/columns/ebay-guide/" class="block p-5 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
+            <p class="text-xs text-gold-600 mb-1">購入ガイド</p>
+            <p class="text-sm font-medium text-navy-800">eBayでの安全な購入方法</p>
+            <p class="text-xs text-gray-500 mt-1">出品者評価・スラブコインの見方</p>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</PageLayout>

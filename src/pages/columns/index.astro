@@ -6,41 +6,49 @@ const columns = [
     title: 'eBayでアンティークコインを安全に購入するには',
     category: '購入ガイド',
     summary: 'eBay を利用したアンティークコインの購入における注意点を解説します。出品者評価の見方、スラブ vs. raw コインの違い、決済・輸入時のポイントを整理します。',
+    href: '/columns/ebay-guide/',
   },
   {
     title: 'グレーディングコインの保管と管理',
     category: '保管・管理',
     summary: 'スラブ封入済みコインの適切な保管方法、湿度・温度管理、長期保存のポイントを解説します。コレクションの価値を長く守るための基礎知識です。',
+    href: '/columns/coin-storage/',
   },
   {
     title: 'Royal Mintとは何か——イギリス王立造幣局の歴史',
     category: 'シリーズ背景',
     summary: '1000 年以上の歴史を持つ英国の造幣局、Royal Mint（王立造幣局）の成り立ちと、現代コレクターコインの発行体制について解説します。',
+    href: '/columns/royal-mint-history/',
   },
   {
     title: 'NGC・PCGSへのコイン提出——概要と流れ',
     category: 'グレーディング',
     summary: '自分のコインを NGC や PCGS に提出してグレーディングを受ける際の基本的な流れを説明します。提出先の選択から返却までのプロセスを整理します。',
+    href: '/columns/ngc-pcgs-submission/',
   },
   {
     title: 'アンティークコインの相場はどこで調べるか',
     category: '市場情報',
     summary: 'PCGS Price Guide、NGC Price Guide、eBay の落札履歴など、アンティークコインの相場調査に使えるリソースを紹介します。相場情報の読み方も解説します。',
+    href: '/columns/coin-price-research/',
   },
   {
     title: 'Una and the Lion とは何か——世界で最も美しいコインの歴史',
     category: 'シリーズ背景',
     summary: '1839 年にウィリアム・ワイオンが彫刻した Una and the Lion の成り立ち、デザインの意味、現代復刻版との違いを解説します。アンティーク市場での評価と価格帯についても触れます。',
+    href: '/columns/una-and-the-lion/',
   },
   {
     title: 'Sovereign（ソブリン）金貨の基礎知識',
     category: 'シリーズ背景',
     summary: '1817 年以来 200 年以上発行され続けるソブリン金貨の歴史、サイズ展開（フルソブリン / ハーフ / クォーター）、年銘による価値の違いを整理します。',
+    href: '/columns/sovereign-basics/',
   },
   {
     title: 'MS70 と PR70 の違いをわかりやすく解説',
     category: 'グレーディング',
     summary: '最高グレードの MS70 と PR70 はどう違うのか。製造工程の差・見た目の特徴・市場での流通量と価格への影響を、初心者向けに整理します。',
+    href: '/columns/ms70-pr70/',
   },
 ];
 ---
@@ -68,26 +76,19 @@ const columns = [
   <section class="bg-white py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="divide-y divide-parchment">
-        {columns.map(({ title, category, summary }) => (
+        {columns.map(({ title, category, summary, href }) => (
           <article class="py-8 first:pt-0 last:pb-0">
             <p class="text-xs font-medium text-gold-600 tracking-wide mb-2">{category}</p>
             <h2 class="font-serif text-xl font-semibold text-navy-900 mb-3 leading-snug">
-              {title}
+              <a href={href} class="hover:text-navy-700 transition-colors">{title}</a>
             </h2>
             <p class="text-sm text-gray-600 leading-loose">{summary}</p>
-            <p class="text-xs text-navy-400 mt-4 italic">（準備中）</p>
+            <a href={href} class="inline-block text-xs text-gold-600 hover:text-gold-500 mt-4 transition-colors">
+              続きを読む →
+            </a>
           </article>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- Note -->
-  <section class="bg-ivory py-10">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-sm text-gray-500 leading-loose">
-        ※ 現在コンテンツを準備中です。随時追加してまいります。
-      </p>
     </div>
   </section>
 </PageLayout>

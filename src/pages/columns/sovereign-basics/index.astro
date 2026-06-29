@@ -1,0 +1,158 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Sovereign（ソブリン）金貨の基礎知識 | コラム"
+  description="1817年以来200年以上発行され続けるソブリン金貨の歴史、サイズ展開、年銘による価値の違いを解説します。"
+>
+  <section class="bg-ivory py-12 border-b border-parchment">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-xs text-gray-400 mb-4">
+        <a href="/" class="hover:text-navy-700 transition-colors">ホーム</a>
+        <span class="mx-2">›</span>
+        <a href="/columns/" class="hover:text-navy-700 transition-colors">コラム</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">Sovereign 基礎知識</span>
+      </nav>
+      <p class="text-xs font-medium tracking-widest text-gold-600 uppercase mb-3">シリーズ背景</p>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-900 leading-snug">
+        Sovereign（ソブリン）金貨の<br class="hidden sm:inline" />基礎知識
+      </h1>
+      <p class="mt-5 text-gray-600 leading-loose">
+        Sovereign（ソブリン）金貨は、1817年以来200年以上にわたって発行され続ける英国の金貨です。
+        世界で最も広く流通する金貨のひとつとして知られ、地金（ブリオン）コインとしての価値に加え、年銘や肖像によってコレクタブルな価値を持つシリーズです。
+        本記事では、ソブリン金貨の基本的な知識を整理します。
+      </p>
+    </div>
+  </section>
+
+  <article class="bg-white py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">ソブリン金貨の基本仕様</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <div class="bg-ivory border border-parchment rounded p-6 mb-6">
+          <dl class="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
+            <div>
+              <dt class="text-xs text-gray-400 mb-0.5">素材</dt>
+              <dd class="text-navy-800 font-medium">22金（.9167 / 22ct）</dd>
+            </div>
+            <div>
+              <dt class="text-xs text-gray-400 mb-0.5">金含有量（フルソブリン）</dt>
+              <dd class="text-navy-800 font-medium">7.3224 g</dd>
+            </div>
+            <div>
+              <dt class="text-xs text-gray-400 mb-0.5">総重量（フルソブリン）</dt>
+              <dd class="text-navy-800 font-medium">7.9881 g</dd>
+            </div>
+            <div>
+              <dt class="text-xs text-gray-400 mb-0.5">直径</dt>
+              <dd class="text-navy-800 font-medium">22.05 mm</dd>
+            </div>
+            <div>
+              <dt class="text-xs text-gray-400 mb-0.5">発行開始</dt>
+              <dd class="text-navy-800 font-medium">1817年</dd>
+            </div>
+            <div>
+              <dt class="text-xs text-gray-400 mb-0.5">発行元</dt>
+              <dd class="text-navy-800 font-medium">Royal Mint（英国）</dd>
+            </div>
+          </dl>
+        </div>
+        <p class="text-sm text-gray-600 leading-loose">
+          22金（.9167）は、純金（.9999）よりも銅を含むアリアージュ合金で、耐摩耗性に優れ流通コインとして適した素材です。同様の合金はAmerican Eagle（米国）でも使用されています。
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">サイズ展開</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          ソブリンは複数のサイズで展開されており、コレクター向けから資産保全目的まで幅広い需要に対応しています。
+        </p>
+        <div class="space-y-3">
+          {[
+            { name: 'Double Sovereign（ダブルソブリン）', weight: '金含有 14.6448 g', desc: '通常の2倍サイズ。コレクター向けに限定発行されることが多い。' },
+            { name: 'Full Sovereign（フルソブリン）', weight: '金含有 7.3224 g', desc: '標準サイズ。最も流通量が多く、市場での流動性が高い。' },
+            { name: 'Half Sovereign（ハーフソブリン）', weight: '金含有 3.6612 g', desc: 'フルの半分。比較的手の届きやすい価格帯でコレクターに人気。' },
+            { name: 'Quarter Sovereign（クォーターソブリン）', weight: '金含有 1.8306 g', desc: '最も小さいサイズ。現代版のみ発行。' },
+          ].map(({ name, weight, desc }) => (
+            <div class="flex gap-4 p-5 border border-parchment rounded">
+              <div class="flex-1">
+                <p class="font-serif text-sm font-semibold text-navy-800 mb-0.5">{name}</p>
+                <p class="text-xs text-gold-600 mb-1">{weight}</p>
+                <p class="text-xs text-gray-500">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">裏面デザイン——ジョージとドラゴン</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          ソブリン金貨の裏面（リバース）で最も有名なのが、聖ジョージが馬に乗ってドラゴンを討つ「St George and the Dragon（ジョージとドラゴン）」のデザインです。このデザインはイタリア人彫刻家ベネデット・ピストルッチ（Benedetto Pistrucci）が1817年に手がけたもので、現代まで受け継がれています。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose">
+          一部の年代では、盾（Shield back）デザインや、特定の彫刻家によるバリエーションデザインも存在し、コレクターの収集テーマとなっています。
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">肖像の変化と年銘の価値</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          表面（オブバース）には発行当時の国王・女王の肖像が刻まれます。ヴィクトリア女王（1837〜1901年）、エドワード7世（1901〜1910年）、ジョージ5世（1910〜1936年）など、肖像の種類はコレクションのテーマとして人気があります。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          一般的に、発行枚数が少ない年（レアデート・キーデート）は高い付加価値を持ちます。例えば、特定の年には複数の造幣局（ロンドン・オーストラリア・カナダ・インド等）でソブリンが製造されており、造幣局マーク（ミントマーク）の違いによって希少性が異なります。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose">
+          年銘・ミントマーク・肖像の組み合わせによる価値の違いは非常に複雑で、コレクターの専門知識が求められます。個別の年銘価値については、PCGS・NGC の Price Guide や専門カタログを参照してください（価格は参考値です）。
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">現代版ソブリン</h2>
+        <div class="w-8 h-px bg-gold-500 mb-6"></div>
+        <p class="text-sm text-gray-600 leading-loose mb-4">
+          Royal Mintは現在もソブリン金貨を発行し続けており、ブリオン版（投資目的）とプルーフ版（コレクター向け）の両方が展開されています。現代版プルーフソブリンは毎年発行され、発行数が限定されているため、特定の年のプルーフは将来的なコレクタブル価値を持つ可能性があります。
+        </p>
+        <p class="text-sm text-gray-600 leading-loose">
+          2023年からはチャールズ3世の肖像が使用されており、エリザベス2世肖像のソブリンとの収集対比もコレクターの関心を集めています。
+        </p>
+      </section>
+
+      <section class="bg-ivory border border-parchment rounded p-8">
+        <h2 class="font-serif text-lg font-semibold text-navy-900 mb-5">まとめ</h2>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>ソブリンは1817年以来発行される22金（.9167）の英国金貨</span></li>
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>フル・ハーフ・クォーター・ダブルの4サイズ展開</span></li>
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>裏面のジョージとドラゴンはベネデット・ピストルッチによる1817年の傑作デザイン</span></li>
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>年銘・ミントマーク・肖像の組み合わせが価値を左右する</span></li>
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>Royal Mintは現在もブリオン版・プルーフ版を発行中</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-lg font-semibold text-navy-900 mb-5">関連ページ</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="/series/" class="block p-5 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
+            <p class="text-xs text-gold-600 mb-1">シリーズ解説</p>
+            <p class="text-sm font-medium text-navy-800">英国コインシリーズ一覧</p>
+            <p class="text-xs text-gray-500 mt-1">Sovereign を含む主要シリーズ</p>
+          </a>
+          <a href="/columns/coin-price-research/" class="block p-5 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
+            <p class="text-xs text-gold-600 mb-1">市場情報</p>
+            <p class="text-sm font-medium text-navy-800">アンティークコインの相場調査</p>
+            <p class="text-xs text-gray-500 mt-1">PCGS・NGC・eBayでの相場の調べ方</p>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </article>
+</PageLayout>
