@@ -66,7 +66,7 @@
 
 ### コラム記事
 
-`/columns/{slug}/`（将来）
+`/columns/{slug}/`（下記8本すべて執筆・公開済み）
 
 #### 構成テンプレート
 
@@ -86,16 +86,18 @@ H2: 見出し2
 関連ページへのリンク
 ```
 
-#### 推奨テーマ（初期コラム候補）
+#### 推奨テーマ（初期コラム候補）— 全8本執筆・公開済み
 
-1. eBay でアンティークコインを安全に購入するには
-2. グレーディングコインの保管・管理方法
-3. Royal Mint の歴史と現代コイン
-4. NGC・PCGS 提出の流れと費用
-5. アンティークコインの相場を調べる方法
-6. Una and the Lion とは何か
-7. Sovereign（ソブリン）金貨の基礎知識
-8. MS70 と PR70 の違いを分かりやすく解説
+1. eBay でアンティークコインを安全に購入するには → `/columns/ebay-guide/`
+2. グレーディングコインの保管・管理方法 → `/columns/coin-storage/`
+3. Royal Mint の歴史と現代コイン → `/columns/royal-mint-history/`
+4. NGC・PCGS 提出の流れと費用 → `/columns/ngc-pcgs-submission/`
+5. アンティークコインの相場を調べる方法 → `/columns/coin-price-research/`
+6. Una and the Lion とは何か → `/columns/una-and-the-lion/`
+7. Sovereign（ソブリン）金貨の基礎知識 → `/columns/sovereign-basics/`
+8. MS70 と PR70 の違いを分かりやすく解説 → `/columns/ms70-pr70/`
+
+次の候補は `07_ROADMAP.md` Phase 2 のシリーズ詳細ページ側で検討する。
 
 ---
 

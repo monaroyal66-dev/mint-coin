@@ -19,25 +19,26 @@ Phase 5: コンサル・販売
 ### 完了済み ✅
 
 - [x] Astro + Tailwind CSS + TypeScript セットアップ
-- [x] Cloudflare Pages デプロイ構成
+- [x] Cloudflare Workers デプロイ構成（2026-07-08追記: 当初のCloudflare Pages/SSG方針から`@astrojs/cloudflare` adapter・`output:'server'`へ移行済み。詳細は`02_TECH_SPEC.md`）
 - [x] BaseLayout（SEO/OGP）
 - [x] Header / Footer コンポーネント
 - [x] トップページ（ヒーロー・カテゴリ・注目テーマ・理念）
 - [x] `/coin-info/` 基礎知識ページ
 - [x] `/series/` シリーズ一覧ページ
 - [x] `/grading/` グレーディング解説ページ
-- [x] `/columns/` コラム一覧ページ
+- [x] `/columns/` コラム一覧ページ + 個別コラム記事8本（執筆・公開済み。詳細は`04_CONTENT_GUIDE.md`）
 - [x] `/company/` 会社概要ページ
 - [x] `/contact/` お問い合わせページ
+- [x] GitHub リポジトリ作成・連携（github.com/monaroyal66-dev/mint-coin）
+- [x] favicon 差し替え（MINT COIN ブランド版 / una_lion_favicon.svg・logo.png）
+- [x] ヒーローのコイン画像を実写6種に更新
 
 ### 残タスク
 
-- [ ] GitHub リポジトリ作成・連携
-- [ ] Cloudflare Pages 本番公開（ドメイン mint-coin.jp 設定）
+- [ ] Cloudflare Workers 本番公開（ドメイン mint-coin.jp のDNS設定・実際のデプロイ実行）
 - [ ] OGP 画像（`/public/og-default.png`）作成
-- [ ] favicon 差し替え（MINT COIN ブランド版）
 - [ ] Google Search Console 登録
-- [ ] sitemap.xml 生成（`@astrojs/sitemap` 導入）
+- [ ] sitemap.xml 生成（`@astrojs/sitemap` 導入。未導入のまま）
 
 ---
 
@@ -130,13 +131,13 @@ Phase 5: コンサル・販売
 ## 技術移行タイムライン
 
 ```
-現在
-  Astro SSG + Tailwind + Cloudflare Pages
+現在（2026-07-08時点）
+  Astro（output: 'server'）+ Tailwind + Cloudflare Workers
+  ※ホスティング層は前倒しでWorkers化済み。DB連携・APIエンドポイント自体は未実装
   ↓ Phase 3
   Cloudflare D1（SQLite 移行）
-  Cloudflare Workers（API）
+  Cloudflare Workers API（/api/* エンドポイント実装）
   ↓ Phase 4
-  Astro hybrid output（一部 SSR 化）
   Cloudflare R2（画像）
   ↓ Phase 5
   Cloudflare KV（キャッシュ）

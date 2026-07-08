@@ -26,7 +26,7 @@
 │       └── /labels/        ← ラベルの読み方（将来）
 │
 ├── /columns/               ← コラム一覧
-│       └── /{slug}/        ← 個別コラム（将来）
+│       └── /{slug}/        ← 個別コラム（8本執筆・公開済み）
 │
 ├── /news/                  ← ニュース（将来）
 │
@@ -46,6 +46,7 @@
 | `/series/` | シリーズ一覧 |
 | `/grading/` | グレーディング解説 |
 | `/columns/` | コラム一覧 |
+| `/columns/{slug}/` | 個別コラム（8本公開済み。una-and-the-lion / sovereign-basics / ms70-pr70 / ngc-pcgs-submission / royal-mint-history / ebay-guide / coin-storage / coin-price-research） |
 | `/company/` | 会社概要 |
 | `/contact/` | お問い合わせ |
 

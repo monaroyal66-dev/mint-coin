@@ -15,7 +15,7 @@
 ### ブランチ構成
 
 ```
-main        ← 本番（Cloudflare Pages が自動デプロイ）
+main        ← 本番（Cloudflare Workers。`npm run deploy` で手動デプロイ、オーナー指示があるまで実行しない）
 develop     ← 開発統合ブランチ
 feature/*   ← 機能別ブランチ（例: feature/series-detail-page）
 ```
@@ -57,7 +57,7 @@ push する前に以下を全て確認する。1項目でも NG なら push し�
 - [ ] `dist/` が追跡されていない
 - [ ] `.astro/` が追跡されていない
 - [ ] `.vscode/` が追跡されていない
-- [ ] `.wrangler/` が追跡されていない
+- [ ] `.wrangler/` が追跡されていない（`wrangler.jsonc` は意図的に未配置。adapter任せの自動検出）
 - [ ] `.env*` が追跡されていない
 - [ ] `git status` が `nothing to commit, working tree clean`
 
@@ -93,14 +93,16 @@ push する前に以下を全て確認する。1項目でも NG なら push し�
 > **現状メモ**: リポジトリが Private であれば LICENSE は必須ではない。
 > Public にする場合は MIT または All Rights Reserved を明記すること。
 
-### 6. Cloudflare Pages の設定確認
+### 6. Cloudflare Workers の設定確認
 
-- [ ] Cloudflare Pages プロジェクトが作成済み
-- [ ] ビルドコマンド: `npm run build`
-- [ ] 出力ディレクトリ: `dist`
-- [ ] Node.js バージョン: `22`（Environment Variables で `NODE_VERSION=22` を設定）
+> 2026-07-08: `@astrojs/cloudflare` adapter導入によりCloudflare Pagesから
+> Cloudflare Workers（`output: 'server'`）へ移行済み。
+
+- [ ] `npm run build` で `dist/server/wrangler.json` が生成されている
+- [ ] `npm run deploy`（= `wrangler deploy --config dist/server/wrangler.json`）はオーナー指示があるまで実行しない
+- [ ] Node.js バージョン: `22`（package.json `engines` で指定済み）
 - [ ] カスタムドメイン `mint-coin.jp` の DNS 設定が完了している（または設定予定を確認）
-- [ ] main ブランチへの push で自動デプロイが動くことを確認
+- [ ] main ブランチへの自動デプロイは未設定（現状は手動 `npm run deploy` 前提。CI連携する場合は要検討）
 
 ---
 
@@ -161,8 +163,9 @@ push する前に以下を全て確認する。1項目でも NG なら push し�
 | 禁止 | 理由 |
 |---|---|
 | デザインカラーの独断変更 | ブランド統一のため |
-| `output: 'server'` への変更 | 静的サイト前提のため |
+| `output`/adapter 設定の独断変更 | 2026-07-08に`output: 'server'`（Cloudflare Workers）へ移行済み。この構成自体が現行仕様であり、無断で`static`に戻す・別adapterに変える等の再変更をしないこと |
 | npm push to GitHub 未指示 | オーナー管理のため |
+| `npm run deploy` / `wrangler deploy` の無断実行 | 本番デプロイはオーナー管理のため |
 | `npm audit fix --force` の実行 | 破壊的変更リスクのため |
 | 仕様書にない機能追加 | スコープ管理のため |
 | コメントアウトされたコードのコミット | コードベースの清潔さのため |
