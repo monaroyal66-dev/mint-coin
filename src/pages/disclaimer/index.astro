@@ -1,0 +1,38 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const paragraphs = [
+  '当サイトに掲載している情報は、アンティークコイン・モダンコインに関する一般的な情報提供を目的としたものです。',
+  '掲載内容については、造幣局公式資料、鑑定会社の公開情報、オークション結果、その他信頼できると判断した資料をもとに作成していますが、その正確性、完全性、最新性を保証するものではありません。',
+  '当サイトに掲載する価格情報、相場情報、グレード、希少性、過去の取引事例等は参考情報であり、特定のコインの購入、売却、保有、投資判断を推奨するものではありません。実際の取引判断は、利用者ご自身の責任において行ってください。',
+  'アンティークコイン・モダンコインの価格は、市場環境、為替、保存状態、鑑定結果、需要、流通量その他の要因により変動します。当サイトの情報を利用したことにより生じたいかなる損害についても、当サイトおよび運営者は責任を負いません。',
+  '当サイトから外部サイトへリンクする場合がありますが、リンク先の内容、サービス、取引、情報の正確性等について、当サイトは責任を負いません。',
+  '当サイトの掲載内容は、予告なく変更・削除される場合があります。',
+];
+---
+
+<PageLayout
+  title="免責事項"
+  description="MINT COINに掲載する情報の正確性、投資判断、外部リンク等に関する免責事項です。"
+>
+  <!-- Page Hero -->
+  <section class="bg-ivory py-12 border-b border-parchment">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-xs text-gray-400 mb-4">
+        <a href="/" class="hover:text-navy-700 transition-colors">ホーム</a>
+        <span class="mx-2">›</span>
+        <span class="text-gray-600">免責事項</span>
+      </nav>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-navy-900">免責事項</h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-white py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+      {paragraphs.map((line) => (
+        <p class="text-sm text-gray-600 leading-loose">{line}</p>
+      ))}
+    </div>
+  </section>
+</PageLayout>
