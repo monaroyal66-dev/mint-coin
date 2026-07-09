@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = Astro.url.href;
-const siteTitle = title === 'ホーム' ? 'MINT-COIN｜アンティークコイン・モダンコイン情報サイト' : `${title} | MINT-COIN`;
+const siteTitle = title === 'ホーム' ? 'MINT-COIN｜アンティークコイン・モダンコイン情報サイト' : `${title} | MINT-COIN｜アンティークコイン・モダンコイン情報サイト`;
 const ogImageUrl = Astro.site
   ? new URL(ogImage, Astro.site).href
   : `https://mint-coin.jp${ogImage}`;
