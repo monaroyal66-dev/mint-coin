@@ -9,12 +9,12 @@ interface Props {
 
 const {
   title,
-  description = 'MINT COINは、アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング、海外市場情報を整理して発信する情報サイトです。',
+  description = 'MINT-COINは、アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング、海外市場情報を整理して発信する情報サイトです。',
   ogImage = '/og-default.png',
 } = Astro.props;
 
 const canonicalUrl = Astro.url.href;
-const siteTitle = title === 'ホーム' ? 'MINT COIN' : `${title} | MINT COIN`;
+const siteTitle = title === 'ホーム' ? 'MINT-COIN｜アンティークコイン・モダンコイン情報サイト' : `${title} | MINT-COIN`;
 const ogImageUrl = Astro.site
   ? new URL(ogImage, Astro.site).href
   : `https://mint-coin.jp${ogImage}`;
@@ -46,7 +46,7 @@ const ogImageUrl = Astro.site
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:site_name" content="MINT COIN" />
+    <meta property="og:site_name" content="MINT-COIN" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
