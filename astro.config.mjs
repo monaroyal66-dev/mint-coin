@@ -9,6 +9,10 @@ export default defineConfig({
   adapter: cloudflare(),
   site: 'https://mint-coin.jp',
   integrations: [sitemap()],
+  // Removed columns: send old links/bookmarks to the column list instead of a 404
+  redirects: {
+    '/columns/ebay-guide': { status: 301, destination: '/columns/' },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

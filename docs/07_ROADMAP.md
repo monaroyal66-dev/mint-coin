@@ -26,7 +26,7 @@ Phase 5: コンサル・販売
 - [x] `/coin-info/` 基礎知識ページ
 - [x] `/series/` シリーズ一覧ページ
 - [x] `/grading/` グレーディング解説ページ
-- [x] `/columns/` コラム一覧ページ + 個別コラム記事8本（執筆・公開済み。詳細は`04_CONTENT_GUIDE.md`）
+- [x] `/columns/` コラム一覧ページ + 個別コラム記事7本（2026-10-12に ebay-guide を削除）（執筆・公開済み。詳細は`04_CONTENT_GUIDE.md`）
 - [x] `/company/` 会社概要ページ
 - [x] `/contact/` お問い合わせページ
 - [x] GitHub リポジトリ作成・連携（github.com/monaroyal66-dev/mint-coin）

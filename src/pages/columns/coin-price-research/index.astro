@@ -4,7 +4,7 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 
 <PageLayout
   title="アンティークコインの相場はどこで調べるか | コラム"
-  description="PCGS Price Guide、NGC Price Guide、eBay落札履歴など、アンティークコインの相場調査に使えるリソースを紹介。相場情報の読み方も解説します。"
+  description="PCGS Price Guide、NGC Price Guide、海外オークションの落札結果など、アンティークコインの相場調査に使えるリソースを紹介。相場情報の読み方も解説します。"
 >
   <section class="bg-ivory py-12 border-b border-parchment">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,16 +59,16 @@ import PageLayout from '../../../layouts/PageLayout.astro';
       </section>
 
       <section>
-        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">eBay 落札履歴（Sold Listings）</h2>
+        <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">海外オークションの落札結果</h2>
         <div class="w-8 h-px bg-gold-500 mb-6"></div>
         <p class="text-sm text-gray-600 leading-loose mb-4">
-          実際の取引価格を調べるには、eBay の落札履歴（Sold Listings）が最も有用なリソースのひとつです。実際に売買が成立した価格を確認できるため、現在の市場実勢価格に近い情報が得られます。
+          実際の取引価格を調べるには、海外オークションの落札結果が最も有用なリソースのひとつです。実際に売買が成立した価格を確認できるため、現在の市場実勢価格に近い情報が得られます。
         </p>
         <p class="text-sm text-gray-600 leading-loose mb-4">
-          eBay で検索後、左サイドバーの「Sold Items」にチェックを入れると、過去の落札済み商品と価格が表示されます。スラブコインの場合はグレードや鑑定機関名も絞り込み条件に含めてください。
+          多くのオークションサイトでは、終了したオークションの落札価格を検索できます。スラブコインの場合は、グレードや鑑定機関も揃えて比較してください。
         </p>
         <p class="text-sm text-gray-600 leading-loose">
-          表示される金額は米ドル建てがほとんどです。為替レートを考慮した上で日本円換算を行ってください。なお、eBay での落札価格は送料・手数料を含まない場合があります。
+          表示される金額は米ドルなどの外貨建てがほとんどです。為替レートを考慮した上で日本円に換算してください。なお、落札価格には送料・手数料が含まれない場合があります。
         </p>
       </section>
 
@@ -76,7 +76,7 @@ import PageLayout from '../../../layouts/PageLayout.astro';
         <h2 class="font-serif text-xl font-semibold text-navy-900 mb-4">国内相場（ヤフオク・国内業者）</h2>
         <div class="w-8 h-px bg-gold-500 mb-6"></div>
         <p class="text-sm text-gray-600 leading-loose mb-4">
-          日本国内での売却・購入を検討している場合は、ヤフオクの落札履歴も参考になります。ただし、国内市場はeBayと比べて流通量が少なく、人気シリーズが高値で取引される場合と、需要が薄くeBayより安値になる場合の両方があります。
+          日本国内での売却・購入を検討している場合は、ヤフオクの落札履歴も参考になります。ただし、国内市場は海外と比べて流通量が少なく、人気シリーズが高値で取引される場合と、需要が薄く海外より安値になる場合の両方があります。
         </p>
         <p class="text-sm text-gray-600 leading-loose">
           国内業者（コイン専門店）の販売価格も参考にはなりますが、小売価格は市場の実勢価格より高めに設定されているケースが多いため、複数の情報源と比較してください。
@@ -91,7 +91,7 @@ import PageLayout from '../../../layouts/PageLayout.astro';
         </p>
         <ul class="space-y-2 text-sm text-gray-600">
           <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>price guideの価格は実際の取引価格と異なる場合がある（参考値）</li>
-          <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>eBay落札価格は一時的な需給で変動する</li>
+          <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>海外オークションの落札価格は一時的な需給で変動する</li>
           <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>グレードの違いが価格に大きく影響するため、同条件での比較が必要</li>
           <li class="flex gap-2"><span class="text-gold-500 shrink-0 mt-0.5">•</span>過去の相場が将来の価格を保証するものではない</li>
         </ul>
@@ -101,7 +101,7 @@ import PageLayout from '../../../layouts/PageLayout.astro';
         <h2 class="font-serif text-lg font-semibold text-navy-900 mb-5">まとめ</h2>
         <ul class="space-y-3 text-sm text-gray-600">
           <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>PCGS / NGC Price Guide でグレード別の参考価格を確認する</span></li>
-          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>eBay の Sold Listings で実際の取引価格を調べる</span></li>
+          <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>海外オークションの落札結果で実際の取引価格を調べる</span></li>
           <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>国内相場はヤフオク落札履歴を参考にする</span></li>
           <li class="flex gap-3"><span class="text-gold-500 shrink-0 mt-0.5">•</span><span>複数のソースを組み合わせて相場観を養う</span></li>
         </ul>
@@ -115,10 +115,10 @@ import PageLayout from '../../../layouts/PageLayout.astro';
             <p class="text-sm font-medium text-navy-800">グレーディングを学ぶ</p>
             <p class="text-xs text-gray-500 mt-1">相場に影響するグレードの仕組み</p>
           </a>
-          <a href="/columns/ebay-guide/" class="block p-5 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
-            <p class="text-xs text-gold-600 mb-1">購入ガイド</p>
-            <p class="text-sm font-medium text-navy-800">eBayでの安全な購入方法</p>
-            <p class="text-xs text-gray-500 mt-1">出品者評価・スラブコインの見方</p>
+          <a href="/columns/ms70-pr70/" class="block p-5 border border-parchment rounded hover:border-navy-200 hover:shadow-sm transition-all">
+            <p class="text-xs text-gold-600 mb-1">グレーディング</p>
+            <p class="text-sm font-medium text-navy-800">MS70 と PR70 の違い</p>
+            <p class="text-xs text-gray-500 mt-1">最高グレードの違いと価格への影響</p>
           </a>
         </div>
       </section>

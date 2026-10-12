@@ -66,7 +66,7 @@
 
 ### コラム記事
 
-`/columns/{slug}/`（下記8本すべて執筆・公開済み）
+`/columns/{slug}/`（下記7本すべて執筆・公開済み）
 
 #### 構成テンプレート
 
@@ -86,9 +86,9 @@ H2: 見出し2
 関連ページへのリンク
 ```
 
-#### 推奨テーマ（初期コラム候補）— 全8本執筆・公開済み
+#### 推奨テーマ（初期コラム候補）— 7本執筆・公開済み
 
-1. eBay でアンティークコインを安全に購入するには → `/columns/ebay-guide/`
+1. ~~eBay でアンティークコインを安全に購入するには → `/columns/ebay-guide/`~~（2026-10-12 削除。eBay 購入を勧める内容に見えるため。/columns/ へ 301）
 2. グレーディングコインの保管・管理方法 → `/columns/coin-storage/`
 3. Royal Mint の歴史と現代コイン → `/columns/royal-mint-history/`
 4. NGC・PCGS 提出の流れと費用 → `/columns/ngc-pcgs-submission/`
