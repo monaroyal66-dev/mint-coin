@@ -115,7 +115,8 @@ const categories = [
   description="MINT-COINは、アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング、海外市場情報を整理して発信する情報サイトです。"
 >
   <!-- Hero -->
-  <section id="hero" class="relative bg-ivory py-24 sm:py-32 overflow-hidden">
+  <!-- sm+ padding keeps the original hero height after the buttons moved out (button 46px + 40px gap, split top/bottom) -->
+  <section id="hero" class="relative bg-ivory py-24 sm:py-[calc(8rem+43px)] overflow-hidden">
     <!-- Opening video (muted). Plays once, then fades out to reveal the normal hero. -->
     <div id="hero-video-wrap" class="absolute inset-0 z-20 bg-black hidden" aria-hidden="true">
       <video
@@ -177,23 +178,9 @@ const categories = [
       <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-navy-900 leading-snug mb-6">
         アンティークコインを、<br />もっと身近に。
       </h1>
-      <p class="text-base sm:text-lg text-gray-600 leading-loose mb-10">
+      <p class="text-base sm:text-lg text-gray-600 leading-loose">
         MINT-COINは、アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング、海外市場情報を整理して発信する情報サイトです。
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="/coin-info/"
-          class="inline-flex items-center justify-center px-8 py-3 bg-navy-800 text-white text-sm font-medium tracking-wide rounded hover:bg-navy-900 transition-colors"
-        >
-          コインを学ぶ
-        </a>
-        <a
-          href="/series/"
-          class="inline-flex items-center justify-center px-8 py-3 border border-navy-700 text-navy-800 text-sm font-medium tracking-wide rounded hover:bg-navy-50 transition-colors"
-        >
-          シリーズ解説を見る
-        </a>
-      </div>
     </div>
   </section>
   <script is:inline>
@@ -243,6 +230,38 @@ const categories = [
       }
     })();
   </script>
+
+  <!-- Hero actions — kept outside the hero so they stay clickable while the opening video plays -->
+  <section class="bg-white pt-12 sm:pt-14">
+    <div class="max-w-2xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/coin-info/"
+          class="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 bg-navy-800 text-white text-sm font-medium tracking-wide rounded hover:bg-navy-900 transition-colors"
+        >
+          コインを学ぶ
+        </a>
+        <a
+          href="/series/"
+          class="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 border border-navy-700 text-navy-800 text-sm font-medium tracking-wide rounded hover:bg-navy-50 transition-colors"
+        >
+          シリーズ解説を見る
+        </a>
+        <a
+          href="https://auctions.yahoo.co.jp/seller/5mCsZ4pG5ofqP1fg7RqhV9nptw61m?user_type=c"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-6 py-3 bg-gold-600 text-white text-sm font-medium tracking-wide rounded hover:bg-gold-700 transition-colors"
+        >
+          Yahoo!オークション出品一覧
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M5 11l6-6M5.5 5H11v5.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only">（新しいタブで開きます）</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Featured Series -->
   <section class="bg-white py-20">
