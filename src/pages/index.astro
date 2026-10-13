@@ -115,8 +115,8 @@ const categories = [
   description="MINT-COINは、アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング、海外市場情報を整理して発信する情報サイトです。"
 >
   <!-- Hero -->
-  <!-- sm+ padding keeps the original hero height after the buttons moved out (button 46px + 40px gap, split top/bottom) -->
-  <section id="hero" class="relative bg-ivory py-24 sm:py-[calc(8rem+43px)] overflow-hidden">
+  <!-- The opening video covers the whole hero, so the hero height is also the video height -->
+  <section id="hero" class="relative bg-ivory pt-12 pb-16 sm:pt-16 sm:pb-24 overflow-hidden">
     <!-- Opening video (muted). Plays once, then fades out to reveal the normal hero. -->
     <div id="hero-video-wrap" class="absolute inset-0 z-20 bg-black hidden" aria-hidden="true">
       <video
@@ -181,6 +181,25 @@ const categories = [
       <p class="text-base sm:text-lg text-gray-600 leading-loose">
         MINT-COINは、アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング、海外市場情報を整理して発信する情報サイトです。
       </p>
+      <!-- Guide characters: Elsa and her parrot Mint (sits under the opening video while it plays) -->
+      <div class="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
+        <img
+          src="/images/characters/elsa-mint.jpg"
+          alt="冒険者のエルザと相棒のオウム、ミント"
+          width="640"
+          height="640"
+          class="w-48 h-48 sm:w-56 sm:h-56 shrink-0 rounded-lg object-cover shadow-sm"
+        />
+        <div class="relative bg-navy-50 border border-navy-100 rounded-2xl px-6 py-5 text-left text-navy-900 leading-loose text-sm sm:text-base">
+          <!-- Tail: points up on phones, left toward the image on larger screens -->
+          <span aria-hidden="true" class="absolute w-4 h-4 bg-navy-50 border-navy-100 rotate-45 left-1/2 -top-2 -translate-x-1/2 border-l border-t sm:left-0 sm:top-1/2 sm:-translate-y-1/2 sm:border-t-0 sm:border-b"></span>
+          <p class="relative">
+            私は冒険者のエルザ、こっちの相棒はミント。<br />
+            世界中から色んなコインを集めてるんだ。<br />
+            コインのことを調べてると、歴史も知れて<br />とっても楽しいんだ♪
+          </p>
+        </div>
+      </div>
     </div>
   </section>
   <script is:inline>
@@ -230,29 +249,6 @@ const categories = [
       }
     })();
   </script>
-
-  <!-- Guide characters: Elsa and her parrot Mint -->
-  <section class="bg-white pt-12 sm:pt-14">
-    <div class="max-w-2xl mx-auto px-4 flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-      <img
-        src="/images/characters/elsa-mint.jpg"
-        alt="冒険者のエルザと相棒のオウム、ミント"
-        width="640"
-        height="640"
-        loading="lazy"
-        class="w-48 h-48 sm:w-56 sm:h-56 shrink-0 rounded-lg object-cover shadow-sm"
-      />
-      <div class="relative bg-navy-50 border border-navy-100 rounded-2xl px-6 py-5 text-navy-900 leading-loose text-sm sm:text-base">
-        <!-- Tail: points up on phones, left toward the image on larger screens -->
-        <span aria-hidden="true" class="absolute w-4 h-4 bg-navy-50 border-navy-100 rotate-45 left-1/2 -top-2 -translate-x-1/2 border-l border-t sm:left-0 sm:top-1/2 sm:-translate-y-1/2 sm:border-t-0 sm:border-b"></span>
-        <p class="relative">
-          私は冒険者のエルザ、こっちの相棒はミント。<br />
-          世界中から色んなコインを集めてるんだ。<br />
-          コインのことを調べてると、歴史も知れて<br />とっても楽しいんだ♪
-        </p>
-      </div>
-    </div>
-  </section>
 
   <!-- Hero actions — kept outside the hero so they stay clickable while the opening video plays -->
   <section class="bg-white pt-12 sm:pt-14">
