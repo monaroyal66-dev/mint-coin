@@ -182,7 +182,7 @@ const categories = [
         MINT-COINは、アンティークコイン・モダンコインの基礎知識、シリーズ解説、グレーディング、海外市場情報を整理して発信する情報サイトです。
       </p>
       <!-- Guide characters: Elsa and her parrot Mint (sits under the opening video while it plays) -->
-      <div class="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
+      <div id="hero-guide" class="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
         <img
           src="/images/characters/elsa-mint.jpg"
           alt="冒険者のエルザと相棒のオウム、ミント"
@@ -214,6 +214,20 @@ const categories = [
       var isSmall = window.matchMedia('(max-width: 767px)').matches;
       video.src = isSmall ? '/videos/otakara_20_sp.mp4' : '/videos/otakara_20_pc.mp4';
       wrap.classList.remove('hidden');
+      // On phones the guide characters stack under the text and make the hero very tall,
+      // so the video stops just above them instead of covering (and heavily cropping) the whole hero
+      var hero = document.getElementById('hero');
+      var guide = document.getElementById('hero-guide');
+      function fitToPhone() {
+        if (!hero || !guide || !window.matchMedia('(max-width: 639px)').matches) {
+          wrap.style.bottom = '';
+          return;
+        }
+        var gap = hero.getBoundingClientRect().bottom - guide.getBoundingClientRect().top + 20;
+        wrap.style.bottom = gap + 'px';
+      }
+      fitToPhone();
+      window.addEventListener('resize', fitToPhone);
       var done = false;
       function finish() {
         if (done) return;
@@ -221,6 +235,7 @@ const categories = [
         video.pause();
         wrap.style.transition = 'opacity 1.2s ease';
         wrap.style.opacity = '0';
+        window.removeEventListener('resize', fitToPhone);
         setTimeout(function () { wrap.remove(); }, 1300);
       }
       video.addEventListener('ended', finish);
