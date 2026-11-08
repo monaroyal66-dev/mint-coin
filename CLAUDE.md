@@ -31,7 +31,8 @@ npm run build
 
 - サイトのコンセプト・理念は承認なしに変更しない
 - デザインシステム（カラー・フォント・余白）は承認なしに変更しない
-- 静的サイト（Cloudflare Pages）を前提とし、SSR は原則使わない
+- ホスティングは Cloudflare Workers（`@astrojs/cloudflare` adapter・`output: 'server'`）。`static` に戻す・adapter を替える等の構成変更は承認なしに行わない（詳細は `docs/02_TECH_SPEC.md` / `docs/06_DEVELOPMENT_RULES.md`）
+- 本番デプロイは `npm run deploy`（`wrangler deploy --config dist/server/wrangler.json`）。オーナーから指示があるまで実行しない
 - `npm run build` がエラーゼロであることを確認してから完了とする
 - GitHub への push はオーナーから明示的に指示があるまで行わない
 - 仕様書 → 実装 の順で進める。仕様にないことは勝手に実装しない
